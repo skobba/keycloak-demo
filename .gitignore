@@ -1,0 +1,32 @@
+# Node modules
+node_modules
+
+# VSCode
+.vscode/
+.fleet/
+scratch
+
+# Logs
+logs
+*.log
+npm-debug.log*
+public/npm-debug.log*
+nbproject/
+.idea/
+.DS_Store
+.env
+bin
+
+#Jest
+/coverage/
+
+#Build
+/build/
+
+#Cypress
+cypress/videos/**/*.mp4
+cypress/screenshots/**/*.png
+
+#Mac setup
+.zshrc
+/server/package-lock.json
