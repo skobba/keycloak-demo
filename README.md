@@ -1,4 +1,4 @@
-# Helpers
+# Docker
 ```
 docker build -t skobbawebapp:latest .
 docker stop skobbawebappcont & docker rm skobbawebappcont & docker image rm localhost/skobbawebapp:latest

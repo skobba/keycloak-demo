@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:13.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRESQL_DB}
+      POSTGRES_USER: ${POSTGRESQL_USER}
+      POSTGRES_PASSWORD: ${POSTGRESQL_PASS}
+    networks:
+      - local-keycloak
+
+  keycloak:
+    depends_on:
+      - postgres
+    container_name: local_keycloak
+    environment:
+      # Would be nice to pass these vars from here, and not the "args" section under.
+      # ENV KEYCLOAK_ADMIN: admin
+      # ENV KEYCLOAK_ADMIN_PASSWORD: admin
+
+      DB_VENDOR: postgres
+      DB_ADDR: postgres
+      DB_DATABASE: ${POSTGRESQL_DB}
+      DB_USER: ${POSTGRESQL_USER}
+      DB_PASSWORD: ${POSTGRESQL_PASS}
+      KEYCLOAK_LOGLEVEL: INFO
+      ROOT_LOGLEVEL: INFO
+    #image: mykeycloak:latest
+    #image: jboss/keycloak:${KEYCLOAK_VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        MY_KEYCLOAK_ADMIN_PASSWORD: admin1234
+    ports:
+      - "28080:8080"
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - local-keycloak
+    command:
+      - start-dev
+
+networks:
+  local-keycloak:
