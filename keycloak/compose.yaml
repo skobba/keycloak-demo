@@ -2,12 +2,19 @@ version: '3.9'
 
 services:
   postgres:
-    image: postgres:13.2
+    #image: postgres:13.2
+    #image: postgres:14.3
+    build:
+      context: .
+      dockerfile: DockerfilePostgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRESQL_DB}
       POSTGRES_USER: ${POSTGRESQL_USER}
       POSTGRES_PASSWORD: ${POSTGRESQL_PASS}
+    # volumes: 
+    #   - ./init:/docker-entrypoint-initdb.d
+      # - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
     networks:
       - local-keycloak
 
@@ -33,7 +40,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        MY_KEYCLOAK_ADMIN_PASSWORD: admin1234
+        MY_KEYCLOAK_ADMIN_PASSWORD: "admin1234"
     ports:
       - "28080:8080"
     stdin_open: true
@@ -43,6 +50,18 @@ services:
       - local-keycloak
     command:
       - start-dev
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: "admin@skobba.net"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports: 
+      - "16543:80"
+    depends_on: 
+      - postgres
+    networks:
+      - local-keycloak
 
 networks:
   local-keycloak:
