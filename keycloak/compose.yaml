@@ -2,6 +2,7 @@ version: '3.9'
 
 services:
   postgres:
+    container_name: postgres
     #image: postgres:13.2
     #image: postgres:14.3
     build:
@@ -32,8 +33,11 @@ services:
       DB_DATABASE: ${POSTGRESQL_DB}
       DB_USER: ${POSTGRESQL_USER}
       DB_PASSWORD: ${POSTGRESQL_PASS}
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
       KEYCLOAK_LOGLEVEL: DEBUG
       ROOT_LOGLEVEL: DEBUG
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin1234
     #image: mykeycloak:latest
     #image: jboss/keycloak:${KEYCLOAK_VERSION}
     build:
@@ -52,12 +56,26 @@ services:
       - start-dev
 
   pgadmin:
+    container_name: pgadmin4
     image: dpage/pgadmin4
     environment: 
       PGADMIN_DEFAULT_EMAIL: "admin@skobba.net"
       PGADMIN_DEFAULT_PASSWORD: "admin"
     ports: 
       - "16543:80"
+    depends_on: 
+      - postgres
+    networks:
+      - local-keycloak
+
+  debianssh:
+    container_name: debianssh
+    build:
+      context: debianssh
+      dockerfile: Dockerfile
+    ports:
+      - "2222:2222"
+      - "8000:80"
     depends_on: 
       - postgres
     networks:

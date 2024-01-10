@@ -3,7 +3,8 @@ FROM debian:latest
 # app
 RUN mkdir -p /app
 WORKDIR /app
-RUN echo 'Ubuntu with psql' >> /app/index.html
+# RUN echo 'Ubuntu with psql' >> /app/index.html
+RUN echo '$mydesc' >> /app/index.html
 
 # ssh
 RUN apt-get update

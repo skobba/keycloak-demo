@@ -1,0 +1,95 @@
+2024-01-08T14:32:14  Welcome, you are now connected to log-streaming service.Starting Log Tail -n 10 of existing logs ----/home/LogFiles/__lastCheckTime.txt  (https://kcskobba2.scm.azurewebsites.net/api/vfs/LogFiles/__lastCheckTime.txt)01/08/2024 14:30:48/home/LogFiles/kudu/trace/773e1ddbdd0a-d558a871-01ee-4226-81a8-074e98b7878d.txt  (https://kcskobba2.scm.azurewebsites.net/api/vfs/LogFiles/kudu/trace/773e1ddbdd0a-d558a871-01ee-4226-81a8-074e98b7878d.txt)
+2024-01-08T14:30:13  Startup Request, url: /api/logstream/, method: GET, type: request, pid: 86,1,7, ScmType: None/home/LogFiles/2024_01_08_lw0sdlwk00001H_docker.log  (https://kcskobba2.scm.azurewebsites.net/api/vfs/LogFiles/2024_01_08_lw0sdlwk00001H_docker.log)
+2024-01-08T14:31:53.090Z INFO  -  Digest: sha256:0032a42a809c8ff6b25a282dc99a7def1b486999a75fd7a4df0c08a6b3babf49
+2024-01-08T14:31:53.103Z INFO  -  Status: Downloaded newer image for gsdemo.azurecr.io/kcskobba:latest
+2024-01-08T14:31:53.143Z INFO  - Pull Image successful, Time taken: 1 Minutes and 4 Seconds
+2024-01-08T14:31:53.761Z INFO  - Starting container for site
+2024-01-08T14:31:53.762Z INFO  - docker run -d --expose=8080 --name kcskobba2_1_921e187b -e WEBSITES_ENABLE_APP_SERVICE_STORAGE=false -e WEBSITE_SITE_NAME=kcskobba2 -e WEBSITE_AUTH_ENABLED=False -e PORT=8080 -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_HOSTNAME=kcskobba2.azurewebsites.net -e WEBSITE_INSTANCE_ID=9d22349ccc41c2d36eb13a3631e70cadabd4c4ff9b56b378f5c146da37637fc0 -e WEBSITE_USE_DIAGNOSTIC_SERVER=False gsdemo.azurecr.io/kcskobba:latest start-dev
+2024-01-08T14:31:53.765Z INFO  - Logging is not enabled for this container.Please use https://aka.ms/linux-diagnostics to enable logging to see container logs here.
+2024-01-08T14:31:56.489Z INFO  - Initiating warmup request to container kcskobba2_1_921e187b for site kcskobba2
+2024-01-08T14:32:13.053Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 16.5638291 secEnding Log Tail of existing logs ---Starting Live Log Stream ---
+2024-01-08T14:32:13.053Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 16.5638291 sec
+2024-01-08T14:34:15  No new trace in the past 1 min(s).
+2024-01-08T14:32:02.818382730Z Updating the configuration and installing your custom providers, if any. Please wait.
+2024-01-08T14:34:06.805070364Z 2024-01-08 14:34:06,659 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 92262ms
+2024-01-08T14:34:40.995801066Z 2024-01-08 14:34:20,731 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
+2024-01-08T14:34:43.947361998Z 2024-01-08 14:34:43,892 WARN  [io.quarkus.agroal.runtime.DataSources] (main) Datasource <default> enables XA but transaction recovery is not enabled. Please enable transaction recovery by setting quarkus.transaction-manager.enable-recovery=true, otherwise data may be lost if the application is terminated abruptly
+2024-01-08T14:34:48.548107862Z 2024-01-08 14:34:48,539 WARN  [io.agroal.pool] (agroal-11) Datasource '<default>': SSL error: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:48.575663636Z 2024-01-08 14:34:48,548 WARN  [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator] (JPA Startup Thread) HHH000342: Could not obtain connection to query metadata: org.postgresql.util.PSQLException: SSL error: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:48.575715736Z 	at org.postgresql.ssl.MakeSSL.convert(MakeSSL.java:43)
+2024-01-08T14:34:48.575723335Z 	at org.postgresql.core.v3.ConnectionFactoryImpl.enableSSL(ConnectionFactoryImpl.java:620)
+2024-01-08T14:34:48.575727535Z 	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:191)
+2024-01-08T14:34:48.575731635Z 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+2024-01-08T14:34:48.575736135Z 	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+2024-01-08T14:34:48.575740335Z 	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+2024-01-08T14:34:48.575744235Z 	at org.postgresql.Driver.makeConnection(Driver.java:443)
+2024-01-08T14:34:48.575747935Z 	at org.postgresql.Driver.connect(Driver.java:297)
+2024-01-08T14:34:48.575751635Z 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+2024-01-08T14:34:48.575755435Z 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+2024-01-08T14:34:48.575759235Z 	at org.postgresql.ds.common.BaseDataSource.getConnection(BaseDataSource.java:103)
+2024-01-08T14:34:48.575762935Z 	at org.postgresql.xa.PGXADataSource.getXAConnection(PGXADataSource.java:49)
+2024-01-08T14:34:48.575766735Z 	at org.postgresql.xa.PGXADataSource.getXAConnection(PGXADataSource.java:35)
+2024-01-08T14:34:48.575770735Z 	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:232)
+2024-01-08T14:34:48.575774435Z 	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:536)
+2024-01-08T14:34:48.575778235Z 	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:517)
+2024-01-08T14:34:48.575802734Z 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024-01-08T14:34:48.575807434Z 	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+2024-01-08T14:34:48.575811134Z 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+2024-01-08T14:34:48.575815034Z 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2024-01-08T14:34:48.575818834Z 	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-01-08T14:34:48.575822534Z Caused by: javax.net.ssl.SSLHandshakeException: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:48.575827734Z 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:131)
+2024-01-08T14:34:48.575831634Z 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:378)
+2024-01-08T14:34:48.575835534Zat java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:321)
+2024-01-08T14:34:48.575839234Z 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:316)
+2024-01-08T14:34:48.575843034Z 	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1357)
+2024-01-08T14:34:48.575846834Z 	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.onConsumeCertificate(CertificateMessage.java:1232)
+2024-01-08T14:34:48.575850833Z 	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.consume(CertificateMessage.java:1175)
+2024-01-08T14:34:48.575858933Z 	at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:396)
+2024-01-08T14:34:48.575862733Z 	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:480)
+2024-01-08T14:34:48.575866533Z 	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:458)
+2024-01-08T14:34:48.575870233Z 	at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:201)
+2024-01-08T14:34:48.575874033Z 	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:172)
+2024-01-08T14:34:48.575877733Z 	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1510)
+2024-01-08T14:34:48.575881533Z 	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1425)
+2024-01-08T14:34:48.575885333Z 	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+2024-01-08T14:34:48.575889133Z 	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+2024-01-08T14:34:48.575892833Z 	at org.postgresql.ssl.MakeSSL.convert(MakeSSL.java:41)
+2024-01-08T14:34:48.575896533Z 	... 20 more
+2024-01-08T14:34:48.575900233Z Caused by: java.security.cert.CertificateException: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:48.575904133Z 	at java.base/sun.security.ssl.AbstractTrustManagerWrapper.checkAlgorithmConstraints(SSLContextImpl.java:1573)
+2024-01-08T14:34:48.575912233Z 	at java.base/sun.security.ssl.AbstractTrustManagerWrapper.checkAdditionalTrust(SSLContextImpl.java:1498)
+2024-01-08T14:34:48.575916432Z 	at java.base/sun.security.ssl.AbstractTrustManagerWrapper.checkServerTrusted(SSLContextImpl.java:1442)
+2024-01-08T14:34:48.575920332Z 	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1341)
+2024-01-08T14:34:48.575924232Z 	... 32 more
+2024-01-08T14:34:48.575928432Z Caused by: java.security.cert.CertPathValidatorException: Algorithm constraints check failed on signature algorithm: SHA1withRSA
+2024-01-08T14:34:48.575932432Z 	at java.base/sun.security.provider.certpath.AlgorithmChecker.check(AlgorithmChecker.java:237)
+2024-01-08T14:34:48.575936132Z 	at java.base/sun.security.ssl.AbstractTrustManagerWrapper.checkAlgorithmConstraints(SSLContextImpl.java:1569)
+2024-01-08T14:34:48.575940032Z 	... 35 more
+2024-01-08T14:34:48.575943632Z
+2024-01-08T14:34:51.004287918Z 2024-01-08 14:34:50,995 WARN  [org.infinispan.PERSISTENCE] (keycloak-cache-init) ISPN000554: jboss-marshalling is deprecated and planned for removal
+2024-01-08T14:34:52.306244604Z 2024-01-08 14:34:52,305 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+2024-01-08T14:34:53.482291936Z 2024-01-08 14:34:53,481 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
+2024-01-08T14:34:59.376915362Z 2024-01-08 14:34:59,328 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (main) Node name: node_692130, Site name: null
+2024-01-08T14:34:59.557513891Z 2024-01-08 14:34:59,555 WARN  [io.agroal.pool] (agroal-11) Datasource '<default>': SSL error: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:59.799468313Z 2024-01-08 14:34:59,772 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Failed to start server in (development) mode
+2024-01-08T14:34:59.801400285Z 2024-01-08 14:34:59,800 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Failed to obtain JDBC connection
+2024-01-08T14:34:59.809169770Z 2024-01-08 14:34:59,808 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: SSL error: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:59.809863560Z 2024-01-08 14:34:59,809 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:59.811307438Z 2024-01-08 14:34:59,809 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Certificates do not conform to algorithm constraints
+2024-01-08T14:34:59.817965040Z 2024-01-08 14:34:59,811 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Algorithm constraints check failed on signature algorithm: SHA1withRSA
+2024-01-08T14:34:59.828697181Z 2024-01-08 14:34:59,818 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) For more details run the same command passing the '--verbose' option. Also you can use '--help' to see the details about the usage of the particular command.
+2024-01-08T14:32:31.974Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 35.4843678 sec
+2024-01-08T14:32:48.762Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 52.2723561 sec
+2024-01-08T14:33:05.113Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 68.6232296 sec
+2024-01-08T14:33:21.870Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 85.3801639 sec
+2024-01-08T14:33:37.862Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 101.3723399 sec
+2024-01-08T14:33:55.618Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 119.1289923 sec
+2024-01-08T14:34:11.724Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 135.2340861 sec
+2024-01-08T14:34:31.377Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 154.8877493 sec
+2024-01-08T14:34:50.612Z INFO  - Waiting for response to warmup request for container kcskobba2_1_921e187b. Elapsed time = 174.1228876 sec
+2024-01-08T14:35:00.957Z ERROR - Container kcskobba2_1_921e187b for site kcskobba2 has exited, failing site start
+2024-01-08T14:35:02.159Z ERROR - Container kcskobba2_1_921e187b didn't respond to HTTP pings on port: 8080, failing site start. See container logs for debugging.
+2024-01-08T14:35:02.213Z INFO  - Stopping site kcskobba2 because it failed during startup.
+2024-01-08T14:36:15  No new trace in the past 1 min(s).
+
