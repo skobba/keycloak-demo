@@ -1,5 +1,13 @@
 FROM debian:latest
 
+# python3 (allready on container)
+RUN apt-get update
+RUN apt-get -y install vim
+RUN apt-get -y install python3-pip python3-venv
+RUN apt-get -y install libpq-dev python-dev-is-python3
+
+RUN pip3 install psycopg2
+
 # app
 RUN mkdir -p /app
 WORKDIR /app
