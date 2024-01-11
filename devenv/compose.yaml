@@ -11,9 +11,12 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRESQL_DB}
-      POSTGRES_USER: ${POSTGRESQL_USER}
-      POSTGRES_PASSWORD: ${POSTGRESQL_PASS}
+      # POSTGRES_DB: ${POSTGRESQL_DB}
+      # POSTGRES_USER: ${POSTGRESQL_USER}
+      # POSTGRES_PASSWORD: ${POSTGRESQL_PASS}
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
     # volumes:
     #   - ./server.crt:/var/lib/postgresql/server.crt
     #   - ./server.key:/var/lib/postgresql/server.key
