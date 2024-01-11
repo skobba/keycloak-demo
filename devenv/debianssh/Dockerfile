@@ -6,7 +6,8 @@ RUN apt-get -y install vim
 RUN apt-get -y install python3-pip python3-venv
 RUN apt-get -y install libpq-dev python-dev-is-python3
 
-RUN pip3 install psycopg2
+# FAILING!!!
+#RUN pip3 install psycopg2
 
 # app
 RUN mkdir -p /app
