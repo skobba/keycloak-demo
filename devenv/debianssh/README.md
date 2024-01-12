@@ -28,6 +28,17 @@ docker exec -it debianssh bash
 docker push gsdemo.azurecr.io/debianssh:latest
 ```
 
+# Create Azure WebApp w/ vnet
+```
+az webapp create -g demo -p ASP-demo-83a0 -n debianssh --deployment-container-image-name gsdemo.azurecr.io/debianssh:latest --vnet vnet-acquapgb --subnet subnet-nqnlui6nuir6e
+```
+
+
+# Delete Azure WebApp
+```
+az webapp delete -g demo -n debianssh
+```
+
 # Another Dockerfile
 ```
 FROM debian:latest

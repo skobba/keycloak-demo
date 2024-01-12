@@ -223,3 +223,13 @@ az vm create -g demo -n myVM --image Debian11 --admin-username demouser --admin-
 az postgres server create -n gspgdb-single -g demo --location "northeurope" --admin-user dbadmin --admin-password Pa$$word
 ```
 
+
+# Create webapp for pgadmin4
+```
+az webapp create -g demo -p ASP-demo-83a0 -n pgadmin --deployment-container-image-name dpage/pgadmin4 --vnet vnet-acquapgb --subnet subnet-obkpbupj
+```
+
+Set admin username and password
+```
+az webapp config appsettings set --resource-group demo --name pgadmin --settings PGADMIN_DEFAULT_EMAIL="admin@skobba.net" PGADMIN_DEFAULT_PASSWORD="admin"
+```

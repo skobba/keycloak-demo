@@ -12,8 +12,9 @@ RUN apt-get -y install libpq-dev python-dev-is-python3
 # app
 RUN mkdir -p /app
 WORKDIR /app
-RUN echo '$mydesc' >> /app/index.html
-COPY dbtest.py /app/
+#RUN echo '$mydesc' >> /app/index.html
+COPY dbtest.py .
+COPY DigiCertGlobalRootCA.crt.pem .
 
 # ssh
 RUN apt-get update
