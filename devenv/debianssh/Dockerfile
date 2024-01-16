@@ -18,7 +18,7 @@ COPY DigiCertGlobalRootCA.crt.pem .
 
 # ssh
 RUN apt-get update
-RUN apt-get -y install openssh-server python3
+RUN apt-get -y install openssh-server
 
 # psql
 RUN apt-get -y install postgresql-client

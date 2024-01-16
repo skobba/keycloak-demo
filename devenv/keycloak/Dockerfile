@@ -23,4 +23,6 @@ ENV KC_DB_PASSWORD=sup-SEC-2000
 ENV KC_DB_URL="jdbc:postgresql://gspgsingle.postgres.database.azure.com:5432/keycloak"
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin1234
+
+CMD ["start-dev"]
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
