@@ -30,7 +30,7 @@ docker push gsdemo.azurecr.io/debianssh:latest
 
 # Create Azure WebApp w/ vnet
 ```
-az webapp create -g demo -p ASP-demo-83a0 -n debianssh --deployment-container-image-name gsdemo.azurecr.io/debianssh:latest --vnet vnet-acquapgb --subnet subnet-nqnlui6nuir6e
+az webapp create -g demo -p ASP-demo-83a0 -n debianssh --deployment-container-image-name gsdemo.azurecr.io/debianssh:latest --vnet vnet-acquapgb --subnet subnet-obkpbupj
 ```
 
 

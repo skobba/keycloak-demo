@@ -1,4 +1,16 @@
 # PG
+## Create single server in Azure
+```
+# NB: This creates the username: keycloak@gspgsingle
+
+az postgres server create -n gspgsingle -g demo --location "northeurope" --admin-user keycloak --admin-password sup-SEC-2000
+
+psql "host=gspgsingle.postgres.database.azure.com port=5432 dbname=postgres user=keycloak@gspgsingle password=sup-SEC-2000 sslmode=require"
+
+No args like this?:
+--vnet vnet-acquapgb --subnet subnet-nqnlui6nuir6e
+```
+
 ## Enabling SSL/TLS
 
 Ref.: https://demirhuseyinn-94.medium.com/postgresql-ssl-configuration-to-connect-database-114f867d96e0

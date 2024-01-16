@@ -15,6 +15,11 @@ docker-compose exec postgres sh
 docker-compose exec keycloak sh
 ```
 
+## Stop and remove
+```
+docker-compose rm -v -f -s
+```
+
 # Docker
 ## Build and run
 ```

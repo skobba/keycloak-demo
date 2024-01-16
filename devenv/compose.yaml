@@ -15,8 +15,9 @@ services:
       # POSTGRES_USER: ${POSTGRESQL_USER}
       # POSTGRES_PASSWORD: ${POSTGRESQL_PASS}
       POSTGRES_DB: keycloak
+      #POSTGRES_USER: keycloak@gspgsingle
       POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: keycloak
+      POSTGRES_PASSWORD: sup-SEC-2000
     # volumes:
     #   - ./server.crt:/var/lib/postgresql/server.crt
     #   - ./server.key:/var/lib/postgresql/server.key
@@ -44,6 +45,8 @@ services:
       KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
       KEYCLOAK_LOGLEVEL: DEBUG
       ROOT_LOGLEVEL: DEBUG
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: sup-SEC-2000
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin1234
     #image: mykeycloak:latest
@@ -60,8 +63,8 @@ services:
     restart: unless-stopped
     networks:
       - local-keycloak
-    command:
-      - start-dev
+    # command:
+    #   - start-dev
 
   pgadmin:
     container_name: pgadmin4

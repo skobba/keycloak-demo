@@ -1,0 +1,34 @@
+FROM alpine/curl:8.1.2 as digicert
+
+RUN mkdir /cert 
+WORKDIR /cert
+RUN curl https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem -o DigiCertGlobalRootCA.crt.pem
+
+FROM quay.io/keycloak/keycloak:22.0.5
+
+ENV KC_HEALTH_ENABLED=true
+ENV KC_METRICS_ENABLED=true
+ENV KEYCLOAK_LOGLEVEL=DEBUG
+ENV KC_DB=postgres
+ENV KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak
+ENV KC_DB_USERNAME=keycloak
+ENV KC_DB_PASSWORD=sup-SEC-2000
+ENV KEYCLOAK_LOGLEVEL=DEBUG
+
+COPY --from=digicert cert/DigiCertGlobalRootCA.crt.pem /opt/keycloak/.postgresql/root.crt
+
+WORKDIR /opt/keycloak
+
+# ssh setup
+COPY ./init-kc.sh .
+COPY ./init-kc.sh /usr/local/bin/
+
+# for demonstration purposes only, please make sure to use proper certificates in production instead
+RUN keytool -genkeypair -storepass password -storetype PKCS12 -keyalg RSA -keysize 2048 -dname "CN=server" -alias server -ext "SAN:c=DNS:localhost,IP:127.0.0.1" -keystore conf/server.keystore
+
+RUN /opt/keycloak/bin/kc.sh build
+
+ENTRYPOINT ["start-dev"]
+#ENTRYPOINT ["/usr/local/bin/init-kc.sh"]
+
+
